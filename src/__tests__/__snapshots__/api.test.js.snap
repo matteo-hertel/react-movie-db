@@ -1,6 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The high level module should have a searchMovie function that returns a promise 1`] = `
+exports[`The high level module should have a getMovie function 1`] = `
+Object {
+  "adult": false,
+  "backdrop_path": "/hA5oCgvgCxj5MEWcLpjXXTwEANF.jpg",
+  "belongs_to_collection": null,
+  "budget": 120000000,
+  "genres": Array [
+    Object {
+      "id": 28,
+      "name": "Action",
+    },
+    Object {
+      "id": 12,
+      "name": "Adventure",
+    },
+    Object {
+      "id": 14,
+      "name": "Fantasy",
+    },
+    Object {
+      "id": 878,
+      "name": "Science Fiction",
+    },
+  ],
+  "homepage": "http://www.warnerbros.com/wonder-woman",
+  "id": 297762,
+  "imdb_id": "tt0451279",
+  "original_language": "en",
+  "original_title": "Wonder Woman",
+  "overview": "An Amazon princess comes to the world of Man to become the greatest of the female superheroes.",
+  "popularity": 240.134252,
+  "poster_path": "/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg",
+  "production_companies": Array [
+    Object {
+      "id": 444,
+      "name": "Dune Entertainment",
+    },
+    Object {
+      "id": 507,
+      "name": "Atlas Entertainment",
+    },
+    Object {
+      "id": 6194,
+      "name": "Warner Bros.",
+    },
+    Object {
+      "id": 9993,
+      "name": "DC Entertainment",
+    },
+    Object {
+      "id": 9995,
+      "name": "Cruel & Unusual Films",
+    },
+    Object {
+      "id": 81620,
+      "name": "TENCENT PICTURES",
+    },
+    Object {
+      "id": 83838,
+      "name": "Wanda Pictures",
+    },
+  ],
+  "production_countries": Array [
+    Object {
+      "iso_3166_1": "US",
+      "name": "United States of America",
+    },
+  ],
+  "release_date": "2017-05-30",
+  "revenue": 573495580,
+  "runtime": 141,
+  "spoken_languages": Array [
+    Object {
+      "iso_639_1": "de",
+      "name": "Deutsch",
+    },
+    Object {
+      "iso_639_1": "en",
+      "name": "English",
+    },
+  ],
+  "status": "Released",
+  "tagline": "Power. Grace. Wisdom. Wonder.",
+  "title": "Wonder Woman",
+  "video": false,
+  "vote_average": 7,
+  "vote_count": 2286,
+}
+`;
+
+exports[`The high level module should have a searchMovie function 1`] = `
 Object {
   "page": 1,
   "results": Array [

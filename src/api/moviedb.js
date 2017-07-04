@@ -15,7 +15,7 @@ import { addLanguage, addAdultFilter, addPagination, addQuery, addApiKey } from 
 export function MovieDb(config) {
     return {
         searchMovies: searchMovies(config), //the search movie is exportable but I'll inject the configs so this module is ready to use
-        getMovie: function () { }
+        getMovie: getMovie(config) //same as aboveq
     };
 }
 /**
@@ -41,10 +41,6 @@ export function searchMovies(config) {
      * @return Promise
      */
     return function search(query) {
-        /**
-         * having this hardcoded URL is not good, I'll spend a bit more time adding a better way 
-         * to handle the query parameters in a better way
-         */
         let url = addLanguage(
             addAdultFilter(
                 addPagination(
@@ -54,6 +50,28 @@ export function searchMovies(config) {
                 )
             )
         )
-        return fetch(url)
+        return fetch(url);
+    }
+}
+/**
+ * @export
+ * @param {any} config requires baseUrl and apiKey
+ * this will make this function working with different configs and be highly reusable
+ * @returns function
+ */
+export function getMovie(config) {
+    /**
+     * Name your anonymous functions, it will be extremely helpful while debugging
+     * 
+     * search function will accept movie ID and return the a promise
+     * 
+     * @param string|int id
+     * @return Promise
+     */
+    return function get(id) {
+        let url = addLanguage(
+            addApiKey(`${config.baseUrl}/movie/${id}`, config.apiKey, true)
+        );
+        return fetch(url);
     }
 }
