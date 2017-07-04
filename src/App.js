@@ -18,7 +18,7 @@ class App extends Component {
                     <h2>MovieDB App</h2>
                 </div>
                 <div className="App-intro">
-                    <div>Search Bar</div>
+                    <SearchBar updateSearchQuery={this.updateSearchQuery} />
                     <div>Search Results</div>
                 </div>
             </div>
