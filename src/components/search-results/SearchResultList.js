@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './SearchResultList.css';
-
+/**
+ * Stateless component to render a set of items and notify the parent if one item has been clicked
+ * 
+ * @class SearchResultList
+ * @extends {Component}
+ */
 class SearchResultList extends Component {
     constructor(props) {
         super(props);
         this.clickHandler = this.clickHandler.bind(this)
-
     }
     render() {
         if (!this.props.items.length && !this.props.loading) {
@@ -27,7 +31,12 @@ class SearchResultList extends Component {
         });
         return (<div>{items}</div>);
     }
-
+    /**
+     * function from the parent to notify the selected state of an item
+     * 
+     * @param {any} key 
+     * @memberof SearchResultList
+     */
     clickHandler(key) {
         this.props.setSelected(key);
     }
