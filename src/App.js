@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import SearchBar from './components/search-bar/SearchBar';
 
 const state = {
     searchTerm: ""
