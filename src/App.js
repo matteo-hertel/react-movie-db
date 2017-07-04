@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './components/search-bar/SearchBar';
+import SearchResultContainer from './components/search-results/SearchResultContainer';
 
 const state = {
     searchTerm: ""
@@ -20,7 +21,7 @@ class App extends Component {
                 </div>
                 <div className="App-intro">
                     <SearchBar updateSearchQuery={this.updateSearchQuery} />
-                    <div>Search Results</div>
+                    <SearchResultContainer dataEnricher={this.props.dataEnricher} term={this.state.searchTerm} apiInterface={this.props.moviedb} />
                 </div>
             </div>
         );
