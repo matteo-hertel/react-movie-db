@@ -9,10 +9,10 @@ class SearchBar extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     render() {
-        return (<div>
-            <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-                <input type="submit" value="Submit" />
+        return (<div className="search-bar-container">
+            <form className="search-bar-form" onSubmit={this.handleSubmit}>
+                <input className="search-bar-input" type="text" value={this.state.value} onChange={this.handleChange} />
+                <input className="search-bar-submit" type="submit" value="Submit" />
             </form>
         </div>
         );
@@ -24,6 +24,9 @@ class SearchBar extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        if (!this.state.value) {
+            return;
+        }
         this.props.updateSearchQuery(this.state.value);
     }
 }

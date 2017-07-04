@@ -15,9 +15,17 @@ class SearchResultList extends Component {
             return (<div>Loading, please wait</div>);
         }
         let items = this.props.items.map((i, key) => {
-            return <li key={key} onClick={() => this.clickHandler(key)}>{JSON.stringify(i, null, 4)}</li>
+            return <div className="search-result-list-card" key={key} onClick={() => this.clickHandler(key)}>
+                <div className="search-result-list-image">
+                    <img src={i.backdrop_path ? i.backdrop_path : i.poster_path} alt={i.title} />
+                </div>
+                <div className="search-result-list-info">
+                    <h1>{i.title}</h1>
+                    <p>{i.overview}</p>
+                </div>
+            </div>
         });
-        return (<ul>{items})</ul>);
+        return (<div>{items})</div>);
     }
 
     clickHandler(key) {

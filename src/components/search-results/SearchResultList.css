@@ -1,0 +1,26 @@
+.search-result-list-card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    display: flex;
+    width: 100%;
+    margin: 10px;
+}
+.search-result-list-image{
+    flex: 1;
+    padding: 0px 10px;
+}
+.search-result-list-image img{
+    max-height: 250px;
+}
+
+.search-result-list-info{
+    flex: 4;
+}
+.search-result-list-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+@media (max-width: 600px) {
+  .search-result-list-image img{
+        max-height: 100px;
+    }
+}
