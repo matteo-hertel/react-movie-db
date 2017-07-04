@@ -1,6 +1,9 @@
-import { MovieDb } from "./../api/moviedb";
+global.XMLHttpRequest = require('w3c-xmlhttprequest').XMLHttpRequest;
 
-const MovieAPI = new MovieDb();
+import { MovieDb } from "./../api/moviedb";
+import config from "./../config";
+
+const MovieAPI = MovieDb(config);
 const query = encodeURIComponent("Wonder Woman");
 /**
  * Test the high level module in order to have test something ready for production
@@ -13,6 +16,8 @@ describe("The high level module", function () {
     });
 
     it('should have a searchMovie function that returns a promise', () => {
-        expect(typeof MovieAPI.searchMovies(query)).toEqual("function"); //I'm sure there is a better way to do this but for now will do
+        // need to add a mock function for fetch, it's doing real HTTP requests ATM
+        expect(typeof MovieAPI.searchMovies(query).then).toEqual("function"); //I'm sure there is a better way to do this but for now will do
+        expect(typeof MovieAPI.searchMovies(query).catch).toEqual("function"); //I'm sure there is a better way to do this but for now will do
     });
 })
