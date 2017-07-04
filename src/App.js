@@ -9,6 +9,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = state;
+        this.updateSearchQuery = this.updateSearchQuery.bind(this);
     }
     render() {
         return (
@@ -22,6 +23,12 @@ class App extends Component {
                 </div>
             </div>
         );
+    }
+
+    updateSearchQuery(term) {
+        let newState = this.state;
+        newState.searchTerm = term;
+        this.setState(newState);
     }
 }
 
