@@ -9,5 +9,7 @@ import { enrichSearchResults } from "./api/transformers/data";
 
 const dataEnricher = enrichSearchResults(config);
 const movieAPI = MovieDb(config);
-
+/**
+ * Render the main app and pass through the dependencies
+ */
 ReactDOM.render(<App moviedb={movieAPI} dataEnricher={dataEnricher} />, document.getElementById('root'));
