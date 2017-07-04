@@ -1,6 +1,7 @@
 .search-bar-container{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 .search-bar-form{
     display: flex;
@@ -19,7 +20,8 @@
     text-align:center;
     text-decoration:none;
     color: #ecf0f1;
-    background: #2ecc71;
+    background: #222222;
     font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
     max-width: 95px;
+    border: none;
 }

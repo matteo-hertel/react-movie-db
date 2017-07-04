@@ -17,7 +17,7 @@ class SearchResultList extends Component {
         let items = this.props.items.map((i, key) => {
             return <div className="search-result-list-card" key={key} onClick={() => this.clickHandler(key)}>
                 <div className="search-result-list-image">
-                    <img src={i.backdrop_path ? i.backdrop_path : i.poster_path} alt={i.title} />
+                    <img src={(i.backdrop_path || `https://placehold.it/450x200?text=Missing+Image`)} alt={i.title} />
                 </div>
                 <div className="search-result-list-info">
                     <h1>{i.title}</h1>
@@ -25,7 +25,7 @@ class SearchResultList extends Component {
                 </div>
             </div>
         });
-        return (<div>{items})</div>);
+        return (<div>{items}</div>);
     }
 
     clickHandler(key) {

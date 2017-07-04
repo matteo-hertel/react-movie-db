@@ -1,0 +1,30 @@
+.search-result-view-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.search-result-view-image{
+    flex: 1;
+    margin-right: 15px;
+}
+.search-result-view-image img{
+    width: 100%
+}
+
+.search-result-view-info{
+    flex: 4;
+}
+
+.search-result-view-back{
+    display: flex;
+    margin-top: 2px;
+    padding:15px;
+    text-align:center;
+    text-decoration:none;
+    color: #ecf0f1;
+    background: #222222;
+    font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    max-width: 95px;
+    border: none;
+}

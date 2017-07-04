@@ -30,14 +30,17 @@ class SearchResultContainer extends Component {
         this.props.apiInterface.searchMovies(query)
             .then(data => data.json())
             .then(data => {
-                console.log(data);
-                console.log(this);
-                setTimeout(() => {
-                    this.setState({
-                        loading: false,
-                        results: this.props.dataEnricher(data.results)
-                    })
-                }, 1000);
+                this.setState({
+                    loading: false,
+                    results: this.props.dataEnricher(data.results)
+                })
+            })
+            .catch(exc => {
+                //some sort of error state is needed, no time for it tough
+                this.setState({
+                    loading: false,
+                    results: []
+                })
             });
     }
     setSelected(index) {

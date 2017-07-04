@@ -10,9 +10,20 @@ class SearchResultView extends Component {
         this.props.goBack();
     }
     render() {
-        return (<div>{JSON.stringify(this.props.item, null, 4)}
-            <button onClick={this.goBack}>Back</button>
-        </div>);
+        return (
+            <div>
+                <div className="search-result-view-container">
+                    <div className="search-result-view-image">
+                        <img src={this.props.item.poster_path || `https://placehold.it/250x500?text=Missing+Image`} alt={this.props.item.title} />
+                    </div>
+                    <div className="search-result-view-info">
+                        <h1>{this.props.item.title}</h1>
+                        <p>{this.props.item.overview}</p>
+                    </div>
+                </div>
+                <button className="search-result-view-back" onClick={this.goBack}>Back</button>
+            </div>
+        );
 
     }
 
