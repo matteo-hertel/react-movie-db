@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import './SearchResultView.css';
-
+/**
+ * Simple view of the single result, stateless component that has no logic
+ * but a simple go back button to notify the parent to go back to the list view
+ * 
+ * @class SearchResultView
+ * @extends {Component}
+ */
 class SearchResultView extends Component {
     constructor(props) {
         super(props);
         this.goBack = this.goBack.bind(this);
     }
+    /**
+     * function from the parent to go back to list view
+     * 
+     * @memberof SearchResultView
+     */
     goBack() {
         this.props.goBack();
     }
