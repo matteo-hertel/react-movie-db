@@ -15,9 +15,22 @@ describe("The high level module", function () {
         expect(typeof MovieAPI).toEqual("object"); //I'm sure there is a better way to do this but for now will do
     });
 
-    it('should have a searchMovie function that returns a promise', () => {
+    it('should have a searchMovie function that returns a promise', (done) => {
         // need to add a mock function for fetch, it's doing real HTTP requests ATM
-        expect(typeof MovieAPI.searchMovies(query).then).toEqual("function"); //I'm sure there is a better way to do this but for now will do
-        expect(typeof MovieAPI.searchMovies(query).catch).toEqual("function"); //I'm sure there is a better way to do this but for now will do
+        let request = MovieAPI.searchMovies(query);
+        expect(typeof request.then).toEqual("function"); //I'm sure there is a better way to do this but for now will do
+        expect(typeof request.catch).toEqual("function"); //I'm sure there is a better way to do this but for now will do
+        request.then((data) => {
+            expect(data).toBeDefined();
+            return data.json();
+        })
+            .then(json => {
+                expect(json).toMatchSnapshot();
+                done();
+            })
+            .catch(exc => {
+                expect(exc).toBeUndefined();
+                done();
+            })
     });
 })
