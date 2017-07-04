@@ -6,10 +6,10 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <h2>Welcome to React</h2>
+                    <h2>MovieDB App</h2>
                 </div>
                 <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
+                    add here your movies
                 </p>
             </div>
         );
