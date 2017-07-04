@@ -1,4 +1,4 @@
-import { addApiKey } from "./transformers/url";
+import { addLanguage, addAdultFilter, addPagination, addQuery, addApiKey } from "./transformers/url";
 
 
 /**
@@ -45,7 +45,15 @@ export function searchMovies(config) {
          * having this hardcoded URL is not good, I'll spend a bit more time adding a better way 
          * to handle the query parameters in a better way
          */
-        let url = addApiKey(`${config.baseUrl}/search/movie?query=${query}`, config.apiKey);
+        let url = addLanguage(
+            addAdultFilter(
+                addPagination(
+                    addQuery(
+                        addApiKey(`${config.baseUrl}/search/movie`, config.apiKey, true),
+                        query)
+                )
+            )
+        )
         return fetch(url)
     }
 }

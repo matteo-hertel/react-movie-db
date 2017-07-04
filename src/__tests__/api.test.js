@@ -4,7 +4,7 @@ import { MovieDb } from "./../api/moviedb";
 import config from "./../config";
 
 const MovieAPI = MovieDb(config);
-const query = encodeURIComponent("Wonder Woman");
+const query = `Wonder Woman`;
 /**
  * Test the high level module in order to have test something ready for production
  * if I have spare time I'll be able to test every single bit
