@@ -6,7 +6,9 @@ Build a UI to search the Movie DB: The user should be able to enter some text in
 and browse the results from the Movie DB.
 
 ## Usage
+first of all add your API key to the config.dist.js (I normally use env for this kind of data) the issue the following in your terminal
 ```
+cp ./config.dist.js ./src/config.js
 yarn
 yarn start
 ```
